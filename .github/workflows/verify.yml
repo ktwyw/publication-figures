@@ -1,0 +1,32 @@
+name: verify
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  figures-and-guide:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install Python dependencies
+        run: pip install -r requirements.txt
+      - name: Render all figures (built-in self-checks assert)
+        run: make check
+      - name: Install LaTeX for the guide
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y --no-install-recommends \
+            texlive-latex-recommended texlive-latex-extra
+      - name: Build the guide
+        run: make guide
+      - name: Rebuild the gallery
+        run: make gallery
+      - name: Upload guide PDF
+        uses: actions/upload-artifact@v4
+        with:
+          name: figure_guide
+          path: figures/figure_guide.pdf

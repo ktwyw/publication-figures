@@ -1,0 +1,12 @@
+# regenerated outputs (run `make figures`)
+figures/*.png
+figures/*.pdf
+!figures/figure_guide.pdf
+figures/thumbs/
+figures/figure_guide.tex
+figures/figure_guide.aux
+figures/figure_guide.log
+figures/figure_guide.out
+figures/figure_guide.toc
+__pycache__/
+*.pyc

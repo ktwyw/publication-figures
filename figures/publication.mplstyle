@@ -1,0 +1,53 @@
+# ============================================================
+# Publication style sheet
+# Apply with:  plt.style.use("publication.mplstyle")
+# Single column ~3.5 in (89 mm) - double column ~7.1 in (183 mm)
+# ============================================================
+
+# ---- Fonts (Arial/Helvetica preferred by most journals; DejaVu fallback)
+font.family:            sans-serif
+font.sans-serif:        Arial, Helvetica, DejaVu Sans
+font.size:              8
+axes.labelsize:         8
+axes.titlesize:         9
+xtick.labelsize:        7
+ytick.labelsize:        7
+legend.fontsize:        7
+legend.title_fontsize:  8
+mathtext.fontset:       dejavusans
+
+# ---- Colour cycle: Okabe-Ito, colour-blind safe
+axes.prop_cycle: cycler('color', ['0072B2', 'D55E00', '009E73', 'CC79A7', 'E69F00', '56B4E9', 'F0E442', '000000'])
+
+# ---- Axes and spines
+axes.linewidth:         0.8
+axes.spines.top:        False
+axes.spines.right:      False
+axes.grid:              False
+axes.axisbelow:         True
+
+# ---- Lines, markers, error bars
+lines.linewidth:        1.2
+lines.markersize:       4
+lines.markeredgewidth:  0.8
+errorbar.capsize:       2
+
+# ---- Ticks
+xtick.direction:        out
+ytick.direction:        out
+xtick.major.size:       3
+ytick.major.size:       3
+xtick.major.width:      0.8
+ytick.major.width:      0.8
+
+# ---- Legend
+legend.frameon:         False
+legend.handlelength:    1.5
+
+# ---- Layout and export
+figure.dpi:             150
+figure.constrained_layout.use: True
+savefig.dpi:            600
+savefig.bbox:           tight
+savefig.pad_inches:     0.02
+savefig.transparent:    False
