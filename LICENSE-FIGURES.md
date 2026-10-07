@@ -10,5 +10,5 @@ sheets) and the **guide** (`figures/figure_guide.pdf` and its text) are
 released under the Creative Commons Attribution 4.0 International licence
 (CC BY 4.0): <https://creativecommons.org/licenses/by/4.0/>
 
-Attribution: *Yanwei Wang, "One Hundred Publication-Quality Figures",
+Attribution: *Yanwei Wang, "One Hundred and Fifty Publication-Quality Figures",
 https://github.com/ktwyw/publication-figures*.
