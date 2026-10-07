@@ -1,10 +1,10 @@
-# One Hundred and Fifty Publication-Quality Figures
+# Two Hundred Publication-Quality Figures
 
 [![verify](https://github.com/ktwyw/publication-figures/actions/workflows/verify.yml/badge.svg)](https://github.com/ktwyw/publication-figures/actions/workflows/verify.yml)
 [![Code: MIT](https://img.shields.io/badge/code-MIT-green.svg)](LICENSE)
 [![Figures: CC BY 4.0](https://img.shields.io/badge/figures-CC%20BY%204.0-lightgrey.svg)](LICENSE-FIGURES.md)
 
-**150 standalone matplotlib scripts** for the figure types scientists and
+**200 standalone matplotlib scripts** for the figure types scientists and
 engineers actually publish -- statistics, materials characterization,
 transport phenomena, electrochemistry, Ashby charts, classics from
 across engineering, and manuscript panels for genomics, clinical
@@ -18,7 +18,7 @@ writes a 600-dpi PNG and a submission-ready vector PDF.
 
 **The companion guide** ([`figures/figure_guide.pdf`](figures/figure_guide.pdf))
 distils the craft: Part I the eight habits these scripts embody, Part II
-the illustrated catalog of all 150, Part III sixteen named failure
+the illustrated catalog of all 200, Part III sixteen named failure
 patterns (each harvested from a real bug), Part IV working checklists.
 
 ## Quick start
@@ -28,7 +28,7 @@ git clone https://github.com/ktwyw/publication-figures.git
 cd publication-figures
 pip install -r requirements.txt
 python figures/fig001_curve_fit.py      # any script runs standalone
-make figures                            # or render all 150
+make figures                            # or render all 200
 make guide gallery                      # rebuild the PDF guide + gallery
 ```
 
@@ -44,7 +44,8 @@ journal theory figure (61) - **D** transport phenomena & reactors
 charts on the shared module (80-81) - **H** across science &
 engineering (82-100) - **I** manuscript panels at exact printed size
 (101-120) - **J** beyond the standard chart: evidence panels across
-fields, on the same exact-size module (121-150).
+fields, on the same exact-size module (121-150) - **K** a second tour
+of science and engineering, five figures to a field (151-200).
 
 ## Gallery
 
@@ -81,6 +82,16 @@ Click any thumbnail to open its script.
 <tr><td align="center"><a href="figures/fig136_competing_risks_cif.py"><img src="gallery/thumbs/fig136_competing_risks_cif.png" width="150" alt="fig136_competing_risks_cif"></a></td><td align="center"><a href="figures/fig137_decision_curve.py"><img src="gallery/thumbs/fig137_decision_curve.png" width="150" alt="fig137_decision_curve"></a></td><td align="center"><a href="figures/fig138_specification_curve.py"><img src="gallery/thumbs/fig138_specification_curve.png" width="150" alt="fig138_specification_curve"></a></td><td align="center"><a href="figures/fig139_chord_diagram.py"><img src="gallery/thumbs/fig139_chord_diagram.png" width="150" alt="fig139_chord_diagram"></a></td><td align="center"><a href="figures/fig140_network_communities.py"><img src="gallery/thumbs/fig140_network_communities.png" width="150" alt="fig140_network_communities"></a></td></tr>
 <tr><td align="center"><a href="figures/fig141_euler_proportional.py"><img src="gallery/thumbs/fig141_euler_proportional.png" width="150" alt="fig141_euler_proportional"></a></td><td align="center"><a href="figures/fig142_treemap_squarified.py"><img src="gallery/thumbs/fig142_treemap_squarified.png" width="150" alt="fig142_treemap_squarified"></a></td><td align="center"><a href="figures/fig143_streamgraph.py"><img src="gallery/thumbs/fig143_streamgraph.png" width="150" alt="fig143_streamgraph"></a></td><td align="center"><a href="figures/fig144_bump_chart.py"><img src="gallery/thumbs/fig144_bump_chart.png" width="150" alt="fig144_bump_chart"></a></td><td align="center"><a href="figures/fig145_spectrogram_chirp.py"><img src="gallery/thumbs/fig145_spectrogram_chirp.png" width="150" alt="fig145_spectrogram_chirp"></a></td></tr>
 <tr><td align="center"><a href="figures/fig146_corner_posterior.py"><img src="gallery/thumbs/fig146_corner_posterior.png" width="150" alt="fig146_corner_posterior"></a></td><td align="center"><a href="figures/fig147_phase_portrait_fhn.py"><img src="gallery/thumbs/fig147_phase_portrait_fhn.png" width="150" alt="fig147_phase_portrait_fhn"></a></td><td align="center"><a href="figures/fig148_hh_traces_scalebars.py"><img src="gallery/thumbs/fig148_hh_traces_scalebars.png" width="150" alt="fig148_hh_traces_scalebars"></a></td><td align="center"><a href="figures/fig149_image_zoom_profile.py"><img src="gallery/thumbs/fig149_image_zoom_profile.png" width="150" alt="fig149_image_zoom_profile"></a></td><td align="center"><a href="figures/fig150_energy_landscape_3d.py"><img src="gallery/thumbs/fig150_energy_landscape_3d.png" width="150" alt="fig150_energy_landscape_3d"></a></td></tr>
+<tr><td align="center"><a href="figures/fig151_hr_diagram.py"><img src="gallery/thumbs/fig151_hr_diagram.png" width="150" alt="fig151_hr_diagram"></a></td><td align="center"><a href="figures/fig152_transit_light_curve.py"><img src="gallery/thumbs/fig152_transit_light_curve.png" width="150" alt="fig152_transit_light_curve"></a></td><td align="center"><a href="figures/fig153_galaxy_rotation_curve.py"><img src="gallery/thumbs/fig153_galaxy_rotation_curve.png" width="150" alt="fig153_galaxy_rotation_curve"></a></td><td align="center"><a href="figures/fig154_sky_map_mollweide.py"><img src="gallery/thumbs/fig154_sky_map_mollweide.png" width="150" alt="fig154_sky_map_mollweide"></a></td><td align="center"><a href="figures/fig155_hohmann_transfer.py"><img src="gallery/thumbs/fig155_hohmann_transfer.png" width="150" alt="fig155_hohmann_transfer"></a></td></tr>
+<tr><td align="center"><a href="figures/fig156_skewt_logp.py"><img src="gallery/thumbs/fig156_skewt_logp.png" width="150" alt="fig156_skewt_logp"></a></td><td align="center"><a href="figures/fig157_ts_diagram.py"><img src="gallery/thumbs/fig157_ts_diagram.png" width="150" alt="fig157_ts_diagram"></a></td><td align="center"><a href="figures/fig158_seasonal_decomposition.py"><img src="gallery/thumbs/fig158_seasonal_decomposition.png" width="150" alt="fig158_seasonal_decomposition"></a></td><td align="center"><a href="figures/fig159_seismic_record_section.py"><img src="gallery/thumbs/fig159_seismic_record_section.png" width="150" alt="fig159_seismic_record_section"></a></td><td align="center"><a href="figures/fig160_stereonet.py"><img src="gallery/thumbs/fig160_stereonet.png" width="150" alt="fig160_stereonet"></a></td></tr>
+<tr><td align="center"><a href="figures/fig161_band_structure_dos.py"><img src="gallery/thumbs/fig161_band_structure_dos.png" width="150" alt="fig161_band_structure_dos"></a></td><td align="center"><a href="figures/fig162_ising_transition.py"><img src="gallery/thumbs/fig162_ising_transition.png" width="150" alt="fig162_ising_transition"></a></td><td align="center"><a href="figures/fig163_bloch_sphere_rabi.py"><img src="gallery/thumbs/fig163_bloch_sphere_rabi.png" width="150" alt="fig163_bloch_sphere_rabi"></a></td><td align="center"><a href="figures/fig164_wigner_cat_state.py"><img src="gallery/thumbs/fig164_wigner_cat_state.png" width="150" alt="fig164_wigner_cat_state"></a></td><td align="center"><a href="figures/fig165_phonon_dispersion.py"><img src="gallery/thumbs/fig165_phonon_dispersion.png" width="150" alt="fig165_phonon_dispersion"></a></td></tr>
+<tr><td align="center"><a href="figures/fig166_mass_peak_pulls.py"><img src="gallery/thumbs/fig166_mass_peak_pulls.png" width="150" alt="fig166_mass_peak_pulls"></a></td><td align="center"><a href="figures/fig167_limit_bands.py"><img src="gallery/thumbs/fig167_limit_bands.png" width="150" alt="fig167_limit_bands"></a></td><td align="center"><a href="figures/fig168_gaussian_beam.py"><img src="gallery/thumbs/fig168_gaussian_beam.png" width="150" alt="fig168_gaussian_beam"></a></td><td align="center"><a href="figures/fig169_decay_chain_bateman.py"><img src="gallery/thumbs/fig169_decay_chain_bateman.png" width="150" alt="fig169_decay_chain_bateman"></a></td><td align="center"><a href="figures/fig170_binding_energy.py"><img src="gallery/thumbs/fig170_binding_energy.png" width="150" alt="fig170_binding_energy"></a></td></tr>
+<tr><td align="center"><a href="figures/fig171_nmr_multiplets.py"><img src="gallery/thumbs/fig171_nmr_multiplets.png" width="150" alt="fig171_nmr_multiplets"></a></td><td align="center"><a href="figures/fig172_chromatogram.py"><img src="gallery/thumbs/fig172_chromatogram.png" width="150" alt="fig172_chromatogram"></a></td><td align="center"><a href="figures/fig173_enzyme_inhibition.py"><img src="gallery/thumbs/fig173_enzyme_inhibition.png" width="150" alt="fig173_enzyme_inhibition"></a></td><td align="center"><a href="figures/fig174_isotope_pattern.py"><img src="gallery/thumbs/fig174_isotope_pattern.png" width="150" alt="fig174_isotope_pattern"></a></td><td align="center"><a href="figures/fig175_ramachandran.py"><img src="gallery/thumbs/fig175_ramachandran.png" width="150" alt="fig175_ramachandran"></a></td></tr>
+<tr><td align="center"><a href="figures/fig176_epidemic_curve_rt.py"><img src="gallery/thumbs/fig176_epidemic_curve_rt.png" width="150" alt="fig176_epidemic_curve_rt"></a></td><td align="center"><a href="figures/fig177_predator_prey.py"><img src="gallery/thumbs/fig177_predator_prey.png" width="150" alt="fig177_predator_prey"></a></td><td align="center"><a href="figures/fig178_rarefaction.py"><img src="gallery/thumbs/fig178_rarefaction.png" width="150" alt="fig178_rarefaction"></a></td><td align="center"><a href="figures/fig179_genetic_drift.py"><img src="gallery/thumbs/fig179_genetic_drift.png" width="150" alt="fig179_genetic_drift"></a></td><td align="center"><a href="figures/fig180_growth_curves.py"><img src="gallery/thumbs/fig180_growth_curves.png" width="150" alt="fig180_growth_curves"></a></td></tr>
+<tr><td align="center"><a href="figures/fig181_psychometric_function.py"><img src="gallery/thumbs/fig181_psychometric_function.png" width="150" alt="fig181_psychometric_function"></a></td><td align="center"><a href="figures/fig182_eeg_topomap.py"><img src="gallery/thumbs/fig182_eeg_topomap.png" width="150" alt="fig182_eeg_topomap"></a></td><td align="center"><a href="figures/fig183_tuning_curves.py"><img src="gallery/thumbs/fig183_tuning_curves.png" width="150" alt="fig183_tuning_curves"></a></td><td align="center"><a href="figures/fig184_pharmacokinetics.py"><img src="gallery/thumbs/fig184_pharmacokinetics.png" width="150" alt="fig184_pharmacokinetics"></a></td><td align="center"><a href="figures/fig185_pv_loop.py"><img src="gallery/thumbs/fig185_pv_loop.png" width="150" alt="fig185_pv_loop"></a></td></tr>
+<tr><td align="center"><a href="figures/fig186_root_locus.py"><img src="gallery/thumbs/fig186_root_locus.png" width="150" alt="fig186_root_locus"></a></td><td align="center"><a href="figures/fig187_step_response_specs.py"><img src="gallery/thumbs/fig187_step_response_specs.png" width="150" alt="fig187_step_response_specs"></a></td><td align="center"><a href="figures/fig188_filter_design.py"><img src="gallery/thumbs/fig188_filter_design.png" width="150" alt="fig188_filter_design"></a></td><td align="center"><a href="figures/fig189_pv_module_curves.py"><img src="gallery/thumbs/fig189_pv_module_curves.png" width="150" alt="fig189_pv_module_curves"></a></td><td align="center"><a href="figures/fig190_load_duration_dispatch.py"><img src="gallery/thumbs/fig190_load_duration_dispatch.png" width="150" alt="fig190_load_duration_dispatch"></a></td></tr>
+<tr><td align="center"><a href="figures/fig191_vn_diagram.py"><img src="gallery/thumbs/fig191_vn_diagram.png" width="150" alt="fig191_vn_diagram"></a></td><td align="center"><a href="figures/fig192_oblique_shock_chart.py"><img src="gallery/thumbs/fig192_oblique_shock_chart.png" width="150" alt="fig192_oblique_shock_chart"></a></td><td align="center"><a href="figures/fig193_fatigue_sn_goodman.py"><img src="gallery/thumbs/fig193_fatigue_sn_goodman.png" width="150" alt="fig193_fatigue_sn_goodman"></a></td><td align="center"><a href="figures/fig194_vibration_absorber.py"><img src="gallery/thumbs/fig194_vibration_absorber.png" width="150" alt="fig194_vibration_absorber"></a></td><td align="center"><a href="figures/fig195_shear_moment_diagram.py"><img src="gallery/thumbs/fig195_shear_moment_diagram.png" width="150" alt="fig195_shear_moment_diagram"></a></td></tr>
+<tr><td align="center"><a href="figures/fig196_psychrometric_chart.py"><img src="gallery/thumbs/fig196_psychrometric_chart.png" width="150" alt="fig196_psychrometric_chart"></a></td><td align="center"><a href="figures/fig197_pump_system_curves.py"><img src="gallery/thumbs/fig197_pump_system_curves.png" width="150" alt="fig197_pump_system_curves"></a></td><td align="center"><a href="figures/fig198_lorenz_gini.py"><img src="gallery/thumbs/fig198_lorenz_gini.png" width="150" alt="fig198_lorenz_gini"></a></td><td align="center"><a href="figures/fig199_event_study_did.py"><img src="gallery/thumbs/fig199_event_study_did.png" width="150" alt="fig199_event_study_did"></a></td><td align="center"><a href="figures/fig200_algorithm_scaling.py"><img src="gallery/thumbs/fig200_algorithm_scaling.png" width="150" alt="fig200_algorithm_scaling"></a></td></tr>
 </table>
 
 ## Figures 101-120: manuscript panels at exact size
@@ -129,11 +140,40 @@ scratch with numpy and scipy, and asserts a landmark the mathematics
 fixes: ribbon ends tile every arc, rectangle areas match their values,
 the two incidences and survival sum to one.
 
+## Figures 151-200: a second tour of science and engineering
+
+Section **K** adds fifty figures, five to a field, each drawn with the
+conventions its field expects (reversed temperature axis on the H-R
+diagram, pressure decreasing upward on the skew-T, reduced time running
+down a record section, humidity ratio on the right of the
+psychrometric chart):
+
+| Figs | Field | Figures |
+|---|---|---|
+| 151-155 | Astronomy and space | H-R diagram, transit light curve, galaxy rotation curve, all-sky Mollweide map, Hohmann and bi-elliptic transfers |
+| 156-160 | Earth, ocean, atmosphere | skew-T log-P, T-S diagram, seasonal decomposition, refraction record section, stereonet |
+| 161-165 | Quantum and condensed matter | graphene bands with DOS, Ising transition, Bloch sphere and Rabi oscillations, Wigner function, phonon dispersion |
+| 166-170 | Particle, nuclear, optics | mass peak with pulls, expected-limit bands, Gaussian beam, Bateman decay chain, liquid-drop binding energy |
+| 171-175 | Chemistry and biochemistry | NMR multiplets, HPLC chromatogram, enzyme inhibition, isotope pattern, Ramachandran plot |
+| 176-180 | Ecology, evolution, epidemiology | epidemic curve with R_t, predator-prey phase plane, rarefaction, genetic drift, microbial growth curves |
+| 181-185 | Neuroscience and physiology | psychometric function, ERP topomap, tuning curves and decoding, pharmacokinetics, pressure-volume loops |
+| 186-190 | Control, signals, energy | root locus, step-response specifications, IIR filter design, PV module curves, screening curves and dispatch |
+| 191-195 | Aerospace, mechanical, structural | V-n diagram, oblique-shock chart, S-N and Haigh diagrams, tuned mass damper, shear and moment diagrams |
+| 196-200 | Thermal-fluid, economics, computing | psychrometric chart, pump and system curves, Lorenz curves, event-study DiD, sorting comparison counts |
+
+Data are simulated wherever they appear; physical constants and
+published correlations (Bolton 1980, EOS-80, the semi-empirical mass
+formula, Den Hartog's tuning) are named where they are used. Each
+script asserts a landmark its field would recognise: the UNESCO
+density check value, Onsager's critical temperature, the 11.94
+bi-elliptic crossover, the 45.58 degree maximum deflection at infinite
+Mach number.
+
 ## Growing the library
 
 The set is built to keep growing -- see
 [`docs/ADDING_FIGURES.md`](docs/ADDING_FIGURES.md).
-`python tools/new_figure.py 151 my_slug "description"` scaffolds a new
+`python tools/new_figure.py 201 my_slug "description"` scaffolds a new
 figure on the house contract (style sheet, seeded RNG, derived curves,
 built-in self-check, twin outputs); one index line in
 `figures/README.md` flows it into the guide and this gallery

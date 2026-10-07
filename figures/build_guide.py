@@ -1,4 +1,4 @@
-"""build_guide.py - generate 'One Hundred and Fifty Publication-Quality Figures'.
+"""build_guide.py - generate 'Two Hundred Publication-Quality Figures'.
 
 Parses README.md (the single source of truth for every entry), makes
 downsampled thumbnails, sanitises the descriptions into LaTeX, and
@@ -205,6 +205,56 @@ def title_of(stem):
             "hh_traces_scalebars": "Traces with scale bars",
             "image_zoom_profile": "Zoom inset and line profile",
             "energy_landscape_3d": "Energy landscape, 3-D and map",
+            "hr_diagram": "Hertzsprung--Russell diagram",
+            "transit_light_curve": "Transit light-curve fit",
+            "galaxy_rotation_curve": "Rotation-curve decomposition",
+            "sky_map_mollweide": "All-sky density map",
+            "hohmann_transfer": "Hohmann and bi-elliptic transfers",
+            "skewt_logp": "Skew-T log-P diagram",
+            "ts_diagram": "T--S diagram with cabbeling",
+            "seasonal_decomposition": "Seasonal decomposition panels",
+            "seismic_record_section": "Refraction record section",
+            "stereonet": "Equal-area stereonet",
+            "band_structure_dos": "Band structure with DOS",
+            "ising_transition": "Ising phase transition",
+            "bloch_sphere_rabi": "Bloch sphere and Rabi oscillations",
+            "wigner_cat_state": "Wigner function with marginals",
+            "phonon_dispersion": "Phonon dispersion",
+            "mass_peak_pulls": "Mass peak with pulls",
+            "limit_bands": "Expected-limit bands",
+            "gaussian_beam": "Gaussian beam focus",
+            "decay_chain_bateman": "Decay-chain ingrowth",
+            "binding_energy": "Liquid-drop binding energy",
+            "nmr_multiplets": "NMR multiplets and integrals",
+            "chromatogram": "HPLC chromatogram with integration",
+            "enzyme_inhibition": "Competitive inhibition, global fit",
+            "isotope_pattern": "Isotope pattern by convolution",
+            "ramachandran": "Ramachandran plot",
+            "epidemic_curve_rt": "Epidemic curve and reproduction number",
+            "predator_prey": "Predator--prey phase plane",
+            "rarefaction": "Rarefaction and rank--abundance",
+            "genetic_drift": "Genetic drift and fixation",
+            "growth_curves": "Microbial growth-curve fits",
+            "psychometric_function": "Psychometric function fit",
+            "eeg_topomap": "ERP butterfly and topomap",
+            "tuning_curves": "Tuning curves and decoding",
+            "pharmacokinetics": "Pharmacokinetic concentration curves",
+            "pv_loop": "Pressure--volume loops",
+            "root_locus": "Root-locus design chart",
+            "step_response_specs": "Step-response specifications",
+            "filter_design": "IIR filter design comparison",
+            "pv_module_curves": "PV module I--V curves",
+            "load_duration_dispatch": "Screening curves and dispatch",
+            "vn_diagram": "V--n flight envelope",
+            "oblique_shock_chart": "Oblique-shock chart",
+            "fatigue_sn_goodman": "S--N curve and Haigh diagram",
+            "vibration_absorber": "Tuned mass damper response",
+            "shear_moment_diagram": "Shear and moment diagrams",
+            "psychrometric_chart": "Psychrometric chart and process",
+            "pump_system_curves": "Pump and system curves",
+            "lorenz_gini": "Lorenz curves and Gini",
+            "event_study_did": "Event-study difference-in-differences",
+            "algorithm_scaling": "Sorting comparison counts",
             "hero_composite": "Asymmetric hero composite"}
     if name in OVER:
         return OVER[name]
@@ -231,7 +281,24 @@ DOMTAG = {61: "Rheology", 82: "RF", 83: "Communications", 84: "Petroleum",
           139: "Flows", 140: "Networks", 141: "Sets",
           142: "Hierarchies", 143: "Flows", 144: "Rankings",
           145: "Signal processing", 146: "Bayesian inference", 147: "Dynamical systems",
-          148: "Electrophysiology", 149: "Microscopy", 150: "Chemical physics"}
+          148: "Electrophysiology", 149: "Microscopy", 150: "Chemical physics",
+          151: "Astronomy", 152: "Exoplanets", 153: "Galaxies",
+          154: "Sky surveys", 155: "Orbital mechanics", 156: "Meteorology",
+          157: "Oceanography", 158: "Climate series", 159: "Seismology",
+          160: "Structural geology", 161: "Condensed matter", 162: "Statistical physics",
+          163: "Quantum physics", 164: "Quantum optics", 165: "Condensed matter",
+          166: "Particle physics", 167: "Particle physics", 168: "Optics",
+          169: "Nuclear physics", 170: "Nuclear physics", 171: "NMR spectroscopy",
+          172: "Chromatography", 173: "Enzyme kinetics", 174: "Mass spectrometry",
+          175: "Structural biology", 176: "Epidemiology", 177: "Ecology",
+          178: "Community ecology", 179: "Population genetics", 180: "Microbiology",
+          181: "Psychophysics", 182: "EEG", 183: "Neural coding",
+          184: "Pharmacokinetics", 185: "Cardiac physiology", 186: "Control",
+          187: "Control", 188: "Signal processing", 189: "Photovoltaics",
+          190: "Energy systems", 191: "Aerospace", 192: "Gas dynamics",
+          193: "Fatigue", 194: "Vibration", 195: "Structural mechanics",
+          196: "HVAC", 197: "Fluid machinery", 198: "Economics",
+          199: "Econometrics", 200: "Algorithms"}
 
 TAGMAP = [("inset", "inset axes"), ("GridSpec", "GridSpec"),
           ("gridspec", "GridSpec"), ("rasteriz", "rasterized points"),
@@ -281,7 +348,9 @@ SECTIONS = {1: "A \\;\\textbullet\\; Statistical and general data graphics "
             101: "I \\;\\textbullet\\; Manuscript panels at exact size "
                  "(figs.\\ 101--120)",
             121: "J \\;\\textbullet\\; Beyond the standard chart: evidence "
-                 "panels across fields (figs.\\ 121--150)"}
+                 "panels across fields (figs.\\ 121--150)",
+            151: "K \\;\\textbullet\\; A second tour of science and "
+                 "engineering (figs.\\ 151--200)"}
 
 SECNOTE = {61: "This single figure carries the reproduction workflow of "
                "\\S I.2 and introduced \\texttt{journal\\_style.py} "
@@ -310,7 +379,23 @@ SECNOTE = {61: "This single figure carries the reproduction workflow of "
                 "ribbons, a squarified treemap, the streamgraph baseline, "
                 "a force-directed graph, sequence-logo glyphs --- and "
                 "each asserts a landmark the mathematics fixes. All data "
-                "are simulated."}
+                "are simulated.",
+           151: "Fifty more, five to a field, each drawn the way that "
+                "field draws it: astronomy and orbital mechanics "
+                "(151--155), Earth, ocean and atmosphere (156--160), "
+                "quantum and condensed-matter physics (161--165), "
+                "particle and nuclear physics and optics (166--170), "
+                "chemistry and structural biology (171--175), ecology, "
+                "evolution, epidemiology and microbiology (176--180), "
+                "neuroscience, pharmacology and physiology (181--185), "
+                "control, signals and energy systems (186--190), "
+                "aerospace, mechanical and structural engineering "
+                "(191--195), and building services, fluid machinery, "
+                "economics and computing (196--200). All are scripts "
+                "over \\texttt{manuscript.py}. Where data appear they are "
+                "simulated; physical constants and published correlations "
+                "are named in the script, and each figure asserts a "
+                "landmark its field would recognise."}
 
 # ------------------------------------------------------------- catalog TeX
 cat = []
@@ -348,11 +433,11 @@ TEX = r"""
 \usepackage[colorlinks=true,linkcolor=blue!50!black]{hyperref}
 \setlist{nosep,leftmargin=1.4em}
 \newcommand{\pat}[2]{\needspace{4\baselineskip}\paragraph{#1.}#2}
-\title{\vspace{-1.2em}One Hundred and Fifty\\[2pt] Publication-Quality Figures\\[2pt]
+\title{\vspace{-1.2em}Two Hundred Publication-Quality Figures\\[2pt]
 \large A practical guide, with the complete worked-example library\vspace{-0.4em}}
 \author{Yanwei Wang \\ \small companion to the
 \texttt{publication-figures} repository \\
-\small (scripts \texttt{fig001}--\texttt{fig150},
+\small (scripts \texttt{fig001}--\texttt{fig200},
 \texttt{publication.mplstyle}, \texttt{journal\_style.py}, \texttt{ashby.py},
 \texttt{manuscript.py})}
 \date{}
@@ -439,7 +524,7 @@ a README indexing every script in one line; the whole library shipped as
 a versioned zip. A figure others can regenerate is a figure others can
 trust.
 
-\section{The catalog: one hundred and fifty worked examples}
+\section{The catalog: two hundred worked examples}
 
 Each entry shows the figure, what it demonstrates, and (where the
 description names one) the built-in check it carries. Thumbnails are
@@ -447,6 +532,8 @@ downsampled; run the script for the full-resolution PNG and vector PDF.
 Sections A--H are the original hundred; section I adds twenty
 manuscript-style panels built at exact printed size, and section J
 thirty figure types from further fields on the same exact-size module.
+Section K is a second tour of fifty, five figures to a field, from
+astronomy to algorithms.
 
 @@CATALOG@@
 
