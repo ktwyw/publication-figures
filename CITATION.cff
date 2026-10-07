@@ -1,12 +1,12 @@
 cff-version: 1.2.0
 message: "If this library helps your teaching or research, please cite it."
-title: "One Hundred Publication-Quality Figures"
+title: "One Hundred and Fifty Publication-Quality Figures"
 authors:
   - family-names: Wang
     given-names: Yanwei
     affiliation: "Nazarbayev University"
-version: 1.0.0
-date-released: 2026-09-25
+version: 2.0.0
+date-released: 2026-10-07
 url: "https://github.com/ktwyw/publication-figures"
 license: MIT
 keywords:

@@ -1,4 +1,4 @@
-"""build_guide.py - generate 'One Hundred Publication-Quality Figures'.
+"""build_guide.py - generate 'One Hundred and Fifty Publication-Quality Figures'.
 
 Parses README.md (the single source of truth for every entry), makes
 downsampled thumbnails, sanitises the descriptions into LaTeX, and
@@ -99,7 +99,8 @@ def sanitise(t):
     t = t.replace("\u221a", r"$\surd$")
     t = t.replace("\u2026", r"\ldots{}")
     # bare macros left in text mode -> wrap in math
-    t = re.sub(r"(?<!\$)\\([A-Za-z]+)\{\}", r"$\\\1$", t)
+    # (the degree sign is a text-mode command and must stay outside math)
+    t = re.sub(r"(?<!\$)\\(?!textdegree)([A-Za-z]+)\{\}", r"$\\\1$", t)
     for i, c in enumerate(codes):
         t = t.replace(f"@@C{i}@@", rf"\texttt{{{c}}}")
     return t
@@ -174,6 +175,36 @@ def title_of(stem):
             "xrd_annealing": "XRD annealing series",
             "raster_psth_sem": "Raster + PSTH with s.e.m.",
             "image_plate_quant": "Image plate + quantification",
+            "radar_benchmark": "Radar benchmark comparison",
+            "critical_difference": "Critical-difference diagram",
+            "pareto_front": "Pareto frontier",
+            "parallel_coordinates": "Parallel-coordinates sweep",
+            "shap_beeswarm": "SHAP beeswarm summary",
+            "gp_regression": "Gaussian-process regression",
+            "genome_tracks": "Genome browser tracks",
+            "sequence_logo": "Sequence logo",
+            "oncoprint": "Oncoprint, memo-sorted",
+            "lollipop_mutations": "Mutation lollipop plot",
+            "hic_contact_triangle": "Hi-C contact triangle",
+            "tree_trait_heatmap": "Tree with trait heatmap",
+            "swimmer_plot": "Swimmer plot",
+            "response_waterfall": "Response waterfall",
+            "consort_flow": "CONSORT flow diagram",
+            "competing_risks_cif": "Competing-risks incidence",
+            "decision_curve": "Decision-curve analysis",
+            "specification_curve": "Specification curve",
+            "chord_diagram": "Chord diagram",
+            "network_communities": "Network communities",
+            "euler_proportional": "Proportional Euler diagrams",
+            "treemap_squarified": "Squarified treemap",
+            "streamgraph": "Streamgraph",
+            "bump_chart": "Bump chart",
+            "spectrogram_chirp": "Chirp spectrogram",
+            "corner_posterior": "Corner plot of a posterior",
+            "phase_portrait_fhn": "Phase portrait",
+            "hh_traces_scalebars": "Traces with scale bars",
+            "image_zoom_profile": "Zoom inset and line profile",
+            "energy_landscape_3d": "Energy landscape, 3-D and map",
             "hero_composite": "Asymmetric hero composite"}
     if name in OVER:
         return OVER[name]
@@ -190,7 +221,17 @@ DOMTAG = {61: "Rheology", 82: "RF", 83: "Communications", 84: "Petroleum",
           107: "Clinical trials", 108: "Clinical trials",
           110: "Pharmacology", 111: "Single-cell", 112: "Microbiome",
           114: "Genetics", 116: "Machine learning", 117: "Materials",
-          118: "Neuroscience", 119: "Microscopy", 120: "Batteries"}
+          118: "Neuroscience", 119: "Microscopy", 120: "Batteries",
+          121: "Machine learning", 122: "Machine learning", 123: "Machine learning",
+          124: "Machine learning", 125: "Machine learning", 126: "Machine learning",
+          127: "Genomics", 128: "Genomics", 129: "Cancer genomics",
+          130: "Cancer genomics", 131: "3D genome", 132: "Phylogenetics",
+          133: "Clinical trials", 134: "Oncology", 135: "Clinical trials",
+          136: "Survival analysis", 137: "Clinical prediction", 138: "Statistics",
+          139: "Flows", 140: "Networks", 141: "Sets",
+          142: "Hierarchies", 143: "Flows", 144: "Rankings",
+          145: "Signal processing", 146: "Bayesian inference", 147: "Dynamical systems",
+          148: "Electrophysiology", 149: "Microscopy", 150: "Chemical physics"}
 
 TAGMAP = [("inset", "inset axes"), ("GridSpec", "GridSpec"),
           ("gridspec", "GridSpec"), ("rasteriz", "rasterized points"),
@@ -238,7 +279,9 @@ SECTIONS = {1: "A \\;\\textbullet\\; Statistical and general data graphics "
             82: "H \\;\\textbullet\\; Across science and engineering "
                 "(figs.\\ 82--100)",
             101: "I \\;\\textbullet\\; Manuscript panels at exact size "
-                 "(figs.\\ 101--120)"}
+                 "(figs.\\ 101--120)",
+            121: "J \\;\\textbullet\\; Beyond the standard chart: evidence "
+                 "panels across fields (figs.\\ 121--150)"}
 
 SECNOTE = {61: "This single figure carries the reproduction workflow of "
                "\\S I.2 and introduced \\texttt{journal\\_style.py} "
@@ -256,7 +299,18 @@ SECNOTE = {61: "This single figure carries the reproduction workflow of "
                 "type is 7/6\\,pt with a 5\\,pt floor, panel letters sit "
                 "at a fixed point offset, and aligned plot areas are "
                 "asserted. Every script also carries a built-in check of "
-                "its own. All data are simulated."}
+                "its own. All data are simulated.",
+           121: "These thirty add figure types the first 120 did not "
+                "cover: model evaluation (121--126), genomics (127--132), "
+                "clinical research (133--138), networks, flows, sets and "
+                "rankings (139--144), and signals, inference, dynamics "
+                "and imaging (145--150). All are scripts over "
+                "\\texttt{manuscript.py} at exact printed size. Several "
+                "code their layout algorithm from scratch --- chord "
+                "ribbons, a squarified treemap, the streamgraph baseline, "
+                "a force-directed graph, sequence-logo glyphs --- and "
+                "each asserts a landmark the mathematics fixes. All data "
+                "are simulated."}
 
 # ------------------------------------------------------------- catalog TeX
 cat = []
@@ -294,11 +348,11 @@ TEX = r"""
 \usepackage[colorlinks=true,linkcolor=blue!50!black]{hyperref}
 \setlist{nosep,leftmargin=1.4em}
 \newcommand{\pat}[2]{\needspace{4\baselineskip}\paragraph{#1.}#2}
-\title{\vspace{-1.2em}One Hundred Publication-Quality Figures\\[2pt]
+\title{\vspace{-1.2em}One Hundred and Fifty\\[2pt] Publication-Quality Figures\\[2pt]
 \large A practical guide, with the complete worked-example library\vspace{-0.4em}}
 \author{Yanwei Wang \\ \small companion to the
 \texttt{publication-figures} repository \\
-\small (scripts \texttt{fig001}--\texttt{fig120},
+\small (scripts \texttt{fig001}--\texttt{fig150},
 \texttt{publication.mplstyle}, \texttt{journal\_style.py}, \texttt{ashby.py},
 \texttt{manuscript.py})}
 \date{}
@@ -310,7 +364,7 @@ TEX = r"""
 \section{The craft: how these figures are made}
 
 Every figure in this library was produced the same way, and the method is
-the point. The one hundred scripts are worked examples of eight habits.
+the point. The scripts are worked examples of eight habits.
 
 \subsection{One style sheet for the whole paper}
 All scripts load a single \texttt{publication.mplstyle}: single-column
@@ -385,13 +439,14 @@ a README indexing every script in one line; the whole library shipped as
 a versioned zip. A figure others can regenerate is a figure others can
 trust.
 
-\section{The catalog: one hundred worked examples, and twenty more}
+\section{The catalog: one hundred and fifty worked examples}
 
 Each entry shows the figure, what it demonstrates, and (where the
 description names one) the built-in check it carries. Thumbnails are
 downsampled; run the script for the full-resolution PNG and vector PDF.
 Sections A--H are the original hundred; section I adds twenty
-manuscript-style panels built at exact printed size.
+manuscript-style panels built at exact printed size, and section J
+thirty figure types from further fields on the same exact-size module.
 
 @@CATALOG@@
 
@@ -492,7 +547,7 @@ from a clean directory.
 \end{itemize}
 
 \vspace{6pt}\noindent\emph{Closing note.} The library's real product is
-not the hundred pictures but the loop that made them: derive, render,
+not the pictures but the loop that made them: derive, render,
 inspect, fix, and let the physics check itself. Everything else in this
 guide is that loop, written down.
 
