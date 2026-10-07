@@ -13,9 +13,11 @@ figures:
 
 check: figures
 	@n=$$(ls $(FIGDIR)/fig[0-9]*.png | wc -l); \
-	 echo "rendered PNGs: $$n"; test $$n -ge 100
+	 echo "rendered PNGs: $$n of $(words $(SCRIPTS))"; \
+	 test $$n -eq $(words $(SCRIPTS))
 	@n=$$(ls $(FIGDIR)/fig[0-9]*.pdf | wc -l); \
-	 echo "rendered PDFs: $$n"; test $$n -ge 100
+	 echo "rendered PDFs: $$n of $(words $(SCRIPTS))"; \
+	 test $$n -eq $(words $(SCRIPTS))
 
 guide:
 	cd $(FIGDIR) && $(PY) build_guide.py

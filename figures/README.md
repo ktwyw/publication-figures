@@ -1,8 +1,8 @@
 # Publication-figure starter kit (matplotlib)
 
-One hundred standalone scripts covering the most common publication figure types, all sharing one style sheet so your whole paper looks consistent.
+One hundred and twenty standalone scripts covering the most common publication figure types, all sharing one style sheet so your whole paper looks consistent.
 
-**Companion guide:** `figure_guide.pdf` (built by `build_guide.py` from this README) — Part I distils the craft, Part II is the illustrated catalog of all 100 examples, Part III the failure-mode catalog, Part IV working checklists.
+**Companion guide:** `figure_guide.pdf` (built by `build_guide.py` from this README) — Part I distils the craft, Part II is the illustrated catalog of all 120 examples, Part III the failure-mode catalog, Part IV working checklists.
 
 ## Requirements
 
@@ -116,6 +116,27 @@ Keep `publication.mplstyle` next to the scripts and run any of them directly, e.
 - `fig098_terzaghi_consolidation.py` — Terzaghi consolidation from the diffusion series: pore-pressure isochrones for a doubly drained layer and U(T_v) with the √(4T_v/π) approximation and the T_50/T_90 milestones
 - `fig099_double_slit.py` — double-slit interference under its single-slit envelope, with a rendered screen strip: d = 4a makes the m = ±4 orders coincide with envelope nulls and vanish — the missing orders are the built-in check
 - `fig100_carnot_cycle.py` — the Carnot cycle in both planes: computed p–V branches enclosing the net work beside the T–s rectangle, with the loop integral asserted equal to (T_h − T_c)ΔS — 1729 J either way, because work between the same states through the same reversible cycle cannot care which plane you drew it in
+- `fig101_grouped_bars_planned.py` — two-factor (genotype × treatment) bars with a second label row, every replicate over mean ± s.d., and exact Holm-adjusted Welch P values on brackets placed from the data maximum; the Holm step is asserted against its definition
+- `fig102_tumour_growth_arms.py` — per-animal longitudinal simulation summarised as mean ± s.d. bands, arms labelled at the right edge in their own colour instead of a legend, a dosing-period bar above the axes; pre-dosing arm means asserted to agree
+- `fig103_volcano_bh.py` — volcano on Benjamini–Hochberg adjusted P from per-gene standard errors, the BH step coded and asserted equal to scipy's, 6,000 genes as a rasterized layer under vector axes, class counts in a header row
+- `fig104_clustermap_annotated.py` — clustermap with correlation-distance average linkage on both axes, a condition bar between the column dendrogram and the matrix, colorbar and legend placed in mm; a two-cluster cut is asserted to reproduce the conditions
+- `fig105_raincloud_kruskal.py` — raincloud with KDE clouds trimmed where the density is negligible, a bimodal group its box alone would hide, and a Kruskal–Wallis header with n; KDE areas and mode counts asserted
+- `fig106_regression_marginals.py` — OLS line with an analytic 95% band for the mean response plus marginal KDEs on shared axes from a millimetre GridSpec; slope ± s.e., r, P and n in-panel; residual orthogonality and the band's waist at the mean of x asserted
+- `fig107_km_confidence_bands.py` — Kaplan–Meier curves with 95% Greenwood log-log confidence bands, censor ticks and a number-at-risk table on the tick positions; the hand-coded log-rank test is asserted to reproduce scipy's
+- `fig108_subgroup_forest.py` — trial subgroup forest: grouped rows with banding, events/patients text columns set in mm, weight-sized squares, overall diamond, plain-tick log hazard-ratio axis; arm totals asserted identical for every factor
+- `fig109_roc_pr_bootstrap.py` — ROC beside precision–recall on equal square panels, AUC with 95% bootstrap intervals, direct labels in each empty corner; the rank-sum AUC is asserted equal to the trapezoid area under the plotted curve
+- `fig110_dose_response_ci.py` — 4-parameter logistic fitted to all replicates with log IC50 as the parameter and a 95% CI from the covariance matrix; mean ± s.d. with distinct markers, plain decimal ticks; true IC50 asserted inside each interval
+- `fig111_embedding_dotplot.py` — single-cell style pair: a 6,000-point simulated embedding (rasterized layer, direct labels) beside a marker dot plot (area = % expressing, colour = scaled mean) with a hand-built size legend and mm-placed colorbar
+- `fig112_composition_diversity.py` — per-sample stacked bars for two groups with group brackets and a stack-ordered legend, beside a Shannon-diversity box-plus-points panel with a Mann–Whitney test; every bar asserted to close at 100%
+- `fig113_response_surface_fit.py` — quadratic response surface fitted by least squares to a 13-run central composite design: optimum solved from the Hessian (asserted negative definite), R², contour levels echoed on the colorbar
+- `fig114_manhattan_loci.py` — Manhattan plot of about 90,000 variants on real autosome proportions: rasterized points, thresholds named in the right margin, loci labelled at their lead variants; genomic inflation of the null asserted ≈ 1
+- `fig115_paired_estimation.py` — paired slope chart coloured by direction of change, beside an estimation panel of the paired differences with their mean and 95% t interval; scipy's paired t asserted equal to the hand formula
+- `fig116_model_benchmark.py` — four-panel ML benchmark as one argument on a mm grid: training curves, seed-level ablation dots with Δ versus the full model, reliability diagram with ECE, confusion matrix; mean ± s.d. over 5 seeds throughout
+- `fig117_xrd_annealing.py` — annealing series of pseudo-Voigt diffraction patterns sharpening out of an amorphous hump: sequential blues, right-margin trace labels, Miller indices at local maxima; peak finding asserted to recover all six reflections
+- `fig118_raster_psth_sem.py` — two-condition spike raster over a binned PSTH with mean ± s.e.m. across trials as a band, rotated block labels, stimulus bar, shared time axis; binning asserted to conserve every spike
+- `fig119_image_plate_quant.py` — 2 × 3 dark image plate (nuclei, marker, merge) in cyan/magenta with shared linear display limits and one calibrated scale bar, beside field-level quantification measured from the same simulated images
+- `fig120_hero_composite.py` — asymmetric composite: a hero time course spanning two rows beside two stacked supporting panels, one role per panel, mean ± s.d. (n = 4) throughout, direct labels; hero edges asserted to match the stack within 1.5 pt
+- `manuscript.py` — shared module for the manuscript-panel figures (101–120): exact-size canvas in millimetres with no tight crop, mm margins and gutters, fixed-offset panel letters, exact-P brackets, and asserts for panel alignment and the 5 pt type floor
 
 ## Adapting to your data
 
@@ -128,6 +149,7 @@ Each script has a clearly marked `DATA` block with simulated values — replace 
 - Despined axes, thin lines, outward ticks, frameless legends
 - `constrained_layout` + tight bounding box, 600 dpi PNG export
 - Figure widths follow journal conventions: ~3.5 in (89 mm) single column, ~7.1 in (183 mm) double column
+- Figures 101–120 go one step further through `manuscript.py`: the canvas is set in millimetres and saved without a tight crop, so the PDF page is exactly the journal width
 
 ## Tips
 

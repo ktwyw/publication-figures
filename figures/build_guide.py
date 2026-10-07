@@ -1,6 +1,6 @@
 """build_guide.py - generate 'One Hundred Publication-Quality Figures'.
 
-Parses README.md (the single source of truth for all 100 entries), makes
+Parses README.md (the single source of truth for every entry), makes
 downsampled thumbnails, sanitises the descriptions into LaTeX, and
 compiles figure_guide.pdf: (I) principles, (II) the illustrated catalog,
 (III) the failure-mode catalog, (IV) checklists.
@@ -154,7 +154,27 @@ def title_of(stem):
             "pz_material_balance": "p/Z material balance",
             "terzaghi_consolidation": "Terzaghi consolidation",
             "double_slit": "Double-slit interference",
-            "carnot_cycle": "Carnot cycle, both planes"}
+            "carnot_cycle": "Carnot cycle, both planes",
+            "grouped_bars_planned": "Grouped bars, planned comparisons",
+            "tumour_growth_arms": "Growth curves by arm",
+            "volcano_bh": "Volcano, BH-adjusted",
+            "clustermap_annotated": "Annotated clustermap",
+            "raincloud_kruskal": "Raincloud + Kruskal--Wallis",
+            "regression_marginals": "Regression + marginals",
+            "km_confidence_bands": "Kaplan--Meier with bands",
+            "subgroup_forest": "Subgroup forest plot",
+            "roc_pr_bootstrap": "ROC + precision--recall",
+            "dose_response_ci": "Dose--response with IC50 intervals",
+            "embedding_dotplot": "Embedding + marker dot plot",
+            "composition_diversity": "Composition + diversity",
+            "response_surface_fit": "Fitted response surface",
+            "manhattan_loci": "Manhattan plot, labelled loci",
+            "paired_estimation": "Paired estimation plot",
+            "model_benchmark": "Model benchmark, four panels",
+            "xrd_annealing": "XRD annealing series",
+            "raster_psth_sem": "Raster + PSTH with s.e.m.",
+            "image_plate_quant": "Image plate + quantification",
+            "hero_composite": "Asymmetric hero composite"}
     if name in OVER:
         return OVER[name]
     return name.replace("_", " ").capitalize()
@@ -166,7 +186,11 @@ DOMTAG = {61: "Rheology", 82: "RF", 83: "Communications", 84: "Petroleum",
           91: "Earthquake", 92: "Bioprocess", 93: "Physics",
           94: "Quantum", 95: "Chemistry", 96: "Communications",
           97: "Petroleum", 98: "Geotechnical", 99: "Optics",
-          100: "Thermodynamics"}
+          100: "Thermodynamics", 102: "Oncology", 103: "Transcriptomics",
+          107: "Clinical trials", 108: "Clinical trials",
+          110: "Pharmacology", 111: "Single-cell", 112: "Microbiome",
+          114: "Genetics", 116: "Machine learning", 117: "Materials",
+          118: "Neuroscience", 119: "Microscopy", 120: "Batteries"}
 
 TAGMAP = [("inset", "inset axes"), ("GridSpec", "GridSpec"),
           ("gridspec", "GridSpec"), ("rasteriz", "rasterized points"),
@@ -212,7 +236,9 @@ SECTIONS = {1: "A \\;\\textbullet\\; Statistical and general data graphics "
             80: "G \\;\\textbullet\\; Ashby charts on the shared module "
                 "(figs.\\ 80--81)",
             82: "H \\;\\textbullet\\; Across science and engineering "
-                "(figs.\\ 82--100)"}
+                "(figs.\\ 82--100)",
+            101: "I \\;\\textbullet\\; Manuscript panels at exact size "
+                 "(figs.\\ 101--120)"}
 
 SECNOTE = {61: "This single figure carries the reproduction workflow of "
                "\\S I.2 and introduced \\texttt{journal\\_style.py} "
@@ -222,7 +248,15 @@ SECNOTE = {61: "This single figure carries the reproduction workflow of "
                "log-space bubbles with the major axis along the tilt, "
                "decade axes, and guide-line labels rotated from the "
                "\\emph{rendered} axes aspect --- the module that retired "
-               "failure pattern 2."}
+               "failure pattern 2.",
+           101: "These twenty mostly revisit figure types from sections "
+                "A and B as a journal prints them. Each is a script over "
+                "\\texttt{manuscript.py}: the canvas is set in millimetres "
+                "and saved without a tight crop (89, 120 or 183\\,mm wide), "
+                "type is 7/6\\,pt with a 5\\,pt floor, panel letters sit "
+                "at a fixed point offset, and aligned plot areas are "
+                "asserted. Every script also carries a built-in check of "
+                "its own. All data are simulated."}
 
 # ------------------------------------------------------------- catalog TeX
 cat = []
@@ -263,8 +297,10 @@ TEX = r"""
 \title{\vspace{-1.2em}One Hundred Publication-Quality Figures\\[2pt]
 \large A practical guide, with the complete worked-example library\vspace{-0.4em}}
 \author{Yanwei Wang \\ \small companion to the
-\texttt{publication-figures} repository (scripts \texttt{fig001}--\texttt{fig100}+,
-\texttt{publication.mplstyle}, \texttt{journal\_style.py}, \texttt{ashby.py})}
+\texttt{publication-figures} repository \\
+\small (scripts \texttt{fig001}--\texttt{fig120},
+\texttt{publication.mplstyle}, \texttt{journal\_style.py}, \texttt{ashby.py},
+\texttt{manuscript.py})}
 \date{}
 \begin{document}
 \maketitle
@@ -343,16 +379,19 @@ derived numbers on save.
 
 \subsection{Reproducibility and packaging}
 One standalone script per figure with a marked DATA block; shared code
-promoted to modules (\texttt{journal\_style.py}, \texttt{ashby.py});
+promoted to modules (\texttt{journal\_style.py}, \texttt{ashby.py},
+\texttt{manuscript.py});
 a README indexing every script in one line; the whole library shipped as
 a versioned zip. A figure others can regenerate is a figure others can
 trust.
 
-\section{The catalog: one hundred worked examples}
+\section{The catalog: one hundred worked examples, and twenty more}
 
 Each entry shows the figure, what it demonstrates, and (where the
 description names one) the built-in check it carries. Thumbnails are
 downsampled; run the script for the full-resolution PNG and vector PDF.
+Sections A--H are the original hundred; section I adds twenty
+manuscript-style panels built at exact printed size.
 
 @@CATALOG@@
 
