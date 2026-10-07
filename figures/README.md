@@ -1,8 +1,8 @@
 # Publication-figure starter kit (matplotlib)
 
-One hundred and twenty standalone scripts covering the most common publication figure types, all sharing one style sheet so your whole paper looks consistent.
+One hundred and fifty standalone scripts covering the most common publication figure types, all sharing one style sheet so your whole paper looks consistent.
 
-**Companion guide:** `figure_guide.pdf` (built by `build_guide.py` from this README) — Part I distils the craft, Part II is the illustrated catalog of all 120 examples, Part III the failure-mode catalog, Part IV working checklists.
+**Companion guide:** `figure_guide.pdf` (built by `build_guide.py` from this README) — Part I distils the craft, Part II is the illustrated catalog of all 150 examples, Part III the failure-mode catalog, Part IV working checklists.
 
 ## Requirements
 
@@ -70,7 +70,7 @@ Keep `publication.mplstyle` next to the scripts and run any of them directly, e.
 - `fig054_cyclic_voltammetry.py` — CVs at five scan rates with a Randles–Ševčík (i_p vs √v) inset
 - `fig055_nyquist_eis.py` — Nyquist impedance plot with Randles-model fit, frequency tags, and a code-drawn equivalent-circuit inset
 - `fig056_isotherm_psd.py` — type-IV N₂ isotherm with H1 hysteresis (IUPAC open/closed symbols) + BJH pore-size panel
-- `fig057_arrhenius.py` — Arrhenius plot with weighted fit, E_a, and an exact secondary °C axis via secondary_xaxis
+- `fig057_arrhenius.py` — Arrhenius plot with weighted fit, E_a, and an exact secondary °C axis via `secondary_xaxis`
 - `fig058_phase_diagram.py` — parameterised binary eutectic phase diagram: labelled fields, eutectic point, tie line
 - `fig059_ftir_stack.py` — stacked FTIR on a reversed wavenumber axis with dotted band guides and rotated assignments
 - `fig060_tauc_bandgap.py` — Tauc plot: linear-region fits extrapolated to the abscissa for optical band gaps
@@ -136,7 +136,37 @@ Keep `publication.mplstyle` next to the scripts and run any of them directly, e.
 - `fig118_raster_psth_sem.py` — two-condition spike raster over a binned PSTH with mean ± s.e.m. across trials as a band, rotated block labels, stimulus bar, shared time axis; binning asserted to conserve every spike
 - `fig119_image_plate_quant.py` — 2 × 3 dark image plate (nuclei, marker, merge) in cyan/magenta with shared linear display limits and one calibrated scale bar, beside field-level quantification measured from the same simulated images
 - `fig120_hero_composite.py` — asymmetric composite: a hero time course spanning two rows beside two stacked supporting panels, one role per panel, mean ± s.d. (n = 4) throughout, direct labels; hero edges asserted to match the stack within 1.5 pt
-- `manuscript.py` — shared module for the manuscript-panel figures (101–120): exact-size canvas in millimetres with no tight crop, mm margins and gutters, fixed-offset panel letters, exact-P brackets, and asserts for panel alignment and the 5 pt type floor
+- `fig121_radar_benchmark.py` — radar chart of three methods on six tasks built on a bare polar axes: every spoke carries its own worst-to-best scale so outward is always better, proposed method filled, baselines outlined; shoelace polygon area asserted equal to its closed form and largest for the proposed method
+- `fig122_critical_difference.py` — Demšar critical-difference diagram for six classifiers on 24 datasets: average ranks on a reversed axis, Nemenyi CD ruler, thick bars joining methods that do not differ, names on elbow leaders; hand-coded Friedman χ² asserted equal to scipy's
+- `fig123_pareto_front.py` — accuracy against inference cost (log axis, plain ticks) for 40 models in three families: Pareto frontier as a staircase, frontier models coloured and labelled directly, dominated models grey; sorted-sweep frontier asserted equal to the brute-force non-dominated set
+- `fig124_parallel_coordinates.py` — parallel coordinates of a 150-run hyperparameter sweep over five axes in real units (log, categorical, power-of-two, linear), lines coloured by validation accuracy, top five runs thick, tick labels in clear lanes; every axis map asserted to round-trip and the labelled best run to be the argmax
+- `fig125_shap_beeswarm.py` — SHAP summary beeswarm for a linear model, where the Shapley values are exact: 400 samples × 8 features sorted by mean absolute contribution, from-scratch swarm layout, dots coloured by feature value; additivity (contributions sum to prediction minus mean prediction) asserted for every sample
+- `fig126_gp_regression.py` — Gaussian-process regression coded from the kernel equations (RBF kernel, Cholesky solve): posterior mean, 95% band and sample paths over noisy observations, beside the log marginal likelihood against length scale with its maximiser; Cholesky mean asserted equal to the direct solve
+- `fig127_genome_tracks.py` — genome-browser panel for a 200-kb window: three coverage tracks piled up from simulated fragments on one printed y scale, peak calls, gene models with strand chevrons, a shaded enhancer, Mb axis and scale bar; each coverage integral asserted equal to reads × fragment length
+- `fig128_sequence_logo.py` — sequence logo of a 12-position motif from 200 simulated sites: letters are TextPath outlines stretched to exact boxes, stacked by information content with the small-sample correction, colour-blind-safe bases; glyph heights asserted to sum to 2 − H − e(n) bits
+- `fig129_oncoprint.py` — oncoprint of 12 genes × 60 samples: copy-number events fill the cell and mutations sit as an inner band so two can coexist, memo-sorted columns give the mutual-exclusivity staircase, with subtype row and marginal bars; printed percentages asserted equal to the row means
+- `fig130_lollipop_mutations.py` — protein lollipop plot: head area proportional to recurrence, colour by mutation class, over a domain bar labelled inside where the name fits; labelled hotspots asserted to be exactly the residues above a Poisson background threshold
+- `fig131_hic_contact_triangle.py` — simulated Hi-C map (power-law decay × domain enrichment) as a 45°-rotated rasterized triangle on a log colour scale, over an insulation-score track on the same genomic axis; every planted boundary asserted to have an insulation minimum within two bins
+- `fig132_tree_trait_heatmap.py` — UPGMA tree of 24 taxa drawn from the linkage matrix with branches coloured by clade, aligned tip labels and a scale bar, beside a row-matched trait heatmap; tip order, ultrametric root-to-tip lengths and a cophenetic correlation above 0.8 asserted
+- `fig133_swimmer_plot.py` — swimmer plot of time on treatment for 26 patients: bars shaded by dose cohort and sorted by duration, marker shapes for response, progression and death, arrow heads for ongoing treatment; every event asserted to lie on its own bar
+- `fig134_response_waterfall.py` — waterfall of best tumour change for 40 patients with threshold lines, response categories derived from them, cut bars flagged, a biomarker strip, and the response rate with its exact 95% CI; Clopper–Pearson limits from beta quantiles asserted equal to scipy's
+- `fig135_consort_flow.py` — CONSORT participant-flow diagram drawn in code: counts tallied from a simulated enrolment table, boxes sized from rendered text extents, right-angle connectors placed in millimetres; counts asserted to conserve at every node and every text to lie inside its box
+- `fig136_competing_risks_cif.py` — hand-coded Aalen–Johansen cumulative incidence of two competing events for two groups with a number-at-risk table, plus the naive 1 − Kaplan–Meier curve that overstates relapse; the two incidences and overall survival asserted to sum to 1
+- `fig137_decision_curve.py` — decision curves of net benefit against threshold probability for two risk models versus treat-all and treat-none, the winning range shaded, a second axis in false positives per true positive; the treat-all curve asserted equal to its analytic line
+- `fig138_specification_curve.py` — specification curve of 72 OLS fits (five analytic choices): ranked estimates with 95% CIs, median and main specification marked, above a dot matrix of the choices; hand-coded slope and s.e. asserted equal to linregress and lstsq
+- `fig139_chord_diagram.py` — chord diagram of a 6 × 6 directed flow matrix from scratch: arcs spanning each group's total, source-coloured Bézier ribbons, the three largest flows saturated, group labels clear of the tick ring; ribbon ends asserted to tile every arc and the circle to close at 2π
+- `fig140_network_communities.py` — 60-node stochastic block model drawn with a numpy Fruchterman–Reingold layout, coloured by spectral modularity clustering, node area by degree, within-community edges darker than bridges, hubs labelled; modularity above 0.3 and recovery of the planted blocks asserted
+- `fig141_euler_proportional.py` — three area-proportional two-set Euler diagrams on one scale: radii from set sizes, centre distance solved by brentq so the lens equals the intersection, counts placed in each region; lens area asserted equal to the intersection
+- `fig142_treemap_squarified.py` — squarified treemap (Bruls–Huizing–van Wijk, coded from scratch) of 30 leaves in 5 groups: group-colour tints, white gutters, labels only where the rendered text fits; one area scale, no overlap and a worst aspect ratio below slice-and-dice asserted
+- `fig143_streamgraph.py` — streamgraph of 7 categories on the Byron–Wattenberg wiggle baseline, layers ordered inside-out, stroke-free fills with one saturated story layer, labels where each layer is thickest, a scale bar in place of the y axis; layer thickness, column totals and the baseline formula asserted
+- `fig144_bump_chart.py` — bump chart of 9 items over 8 periods: ranks joined by smoothstep connectors, three story items in colour with rank numerals in their markers, the rest grey, names at both ends with net change; ranks asserted to be permutations equal to scipy's rankdata
+- `fig145_spectrogram_chirp.py` — waveform of a quadratic chirp plus tone burst in noise over its Hann-window STFT spectrogram in dB (rasterized, aligned colorbar), analytic instantaneous frequency overlaid; the spectrogram ridge asserted to follow f(t) within one frequency bin plus window smearing
+- `fig146_corner_posterior.py` — corner plot of a three-parameter posterior from a hand-coded Metropolis–Hastings sampler (4 chains): step marginals with median and 16th/84th percentiles, 39.3% and 86.5% mass contours, truth crosshairs; R-hat below 1.05, contour mass and truth coverage asserted
+- `fig147_phase_portrait_fhn.py` — FitzHugh–Nagumo phase plane (nullclines, direction field, trajectories onto the limit cycle, unstable focus with its eigenvalues) beside v(t) and w(t) with the period bracketed; fixed point, instability and two independent period estimates asserted to agree
+- `fig148_hh_traces_scalebars.py` — Hodgkin–Huxley responses to five current steps as axis-free stacked traces with an L-shaped scale bar and the step protocol beneath, beside the f–I curve with matching markers; resting fixed point and non-decreasing spike counts asserted
+- `fig149_image_zoom_profile.py` — simulated bead-and-filament fluorescence field with scale bar and ROI, the ROI magnified pixel-for-pixel with its own bar and profile path, and the line profile with a Gaussian fit and FWHM bracket; fitted FWHM asserted to match the PSF within 5%
+- `fig150_energy_landscape_3d.py` — Müller–Brown potential as a rasterized 3-D surface over floor contours beside a map with numerically located minima and saddles, their energies and the steepest-descent minimum-energy path; gradients, Hessian signatures and literature minimum energies asserted
+- `manuscript.py` — shared module for the manuscript-panel figures (101–150): exact-size canvas in millimetres with no tight crop, mm margins and gutters, fixed-offset panel letters, exact-P brackets, and asserts for panel alignment and the 5 pt type floor
 
 ## Adapting to your data
 
@@ -149,7 +179,7 @@ Each script has a clearly marked `DATA` block with simulated values — replace 
 - Despined axes, thin lines, outward ticks, frameless legends
 - `constrained_layout` + tight bounding box, 600 dpi PNG export
 - Figure widths follow journal conventions: ~3.5 in (89 mm) single column, ~7.1 in (183 mm) double column
-- Figures 101–120 go one step further through `manuscript.py`: the canvas is set in millimetres and saved without a tight crop, so the PDF page is exactly the journal width
+- Figures 101–150 go one step further through `manuscript.py`: the canvas is set in millimetres and saved without a tight crop, so the PDF page is exactly the journal width
 
 ## Tips
 
