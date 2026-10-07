@@ -1,7 +1,8 @@
 # Licence for rendered figures and the guide
 
 The **code** in this repository (every `fig*.py`, `journal_style.py`,
-`ashby.py`, `build_guide.py`, `tools/`) is released under the MIT License
+`ashby.py`, `manuscript.py`, `build_guide.py`, `tools/`) is released
+under the MIT License
 (see `LICENSE`).
 
 The **rendered figures** (PNG/PDF outputs, gallery thumbnails, contact

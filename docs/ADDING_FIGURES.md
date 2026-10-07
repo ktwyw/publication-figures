@@ -1,4 +1,4 @@
-# Adding figure 101 and beyond
+# Adding figure 121 and beyond
 
 The library is designed to grow. Each new figure is one standalone
 script plus one index line; everything else (guide, gallery, CI) follows
@@ -7,10 +7,10 @@ automatically.
 1. **Scaffold it**
 
    ```
-   python tools/new_figure.py 101 my_short_slug "One-line description"
+   python tools/new_figure.py 121 my_short_slug "One-line description"
    ```
 
-   This writes `figures/fig101_my_short_slug.py` from the house template
+   This writes `figures/fig121_my_short_slug.py` from the house template
    and prints the README bullet to paste.
 
 2. **Honour the contract** (the template enforces it):
@@ -22,19 +22,26 @@ automatically.
    - a built-in self-check: an `assert` on a landmark the physics fixes
      (a peak on a locus, a tangency, an area identity), plus a printed
      confirmation with the key numbers;
-   - `fig.savefig(HERE / f"fig101_my_short_slug.{ext}")` for both
+   - `fig.savefig(HERE / f"fig121_my_short_slug.{ext}")` for both
      `png` and `pdf`.
+
+   For a figure that must come out at an exact printed size, build it on
+   `figures/manuscript.py` instead (see `fig107_km_confidence_bands.py`):
+   `ms.apply()` loads the style sheet and switches off the tight crop,
+   `ms.figure(89, 60)` and `ms.grid(...)` take millimetres, and
+   `ms.assert_aligned` / `ms.assert_min_font` check panel edges and the
+   5 pt type floor.
 
 3. **Index it**: add exactly one line to `figures/README.md`, matching
    the existing format:
 
    ```
-   - `fig101_my_short_slug.py` — one-line description
+   - `fig121_my_short_slug.py` — one-line description
    ```
 
    `build_guide.py` parses that line (it accepts >= 100 entries), makes
    the thumbnail, and typesets the new entry into Part II of the guide.
-   Entries 101+ fall under section H unless you add a new section in
+   Entries 121+ fall under section I unless you add a new section in
    `SECTIONS`; an optional domain tag goes in `DOMTAG`.
 
 4. **Verify like the first hundred**: `make figures` (your assert must

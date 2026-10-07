@@ -4,7 +4,7 @@
 [![Code: MIT](https://img.shields.io/badge/code-MIT-green.svg)](LICENSE)
 [![Figures: CC BY 4.0](https://img.shields.io/badge/figures-CC%20BY%204.0-lightgrey.svg)](LICENSE-FIGURES.md)
 
-**100 standalone matplotlib scripts** for the figure types scientists and
+**120 standalone matplotlib scripts** for the figure types scientists and
 engineers actually publish -- statistics, materials characterization,
 transport phenomena, electrochemistry, Ashby charts, and classics from
 across engineering. Every curve is **derived from governing equations**
@@ -17,7 +17,7 @@ writes a 600-dpi PNG and a submission-ready vector PDF.
 
 **The companion guide** ([`figures/figure_guide.pdf`](figures/figure_guide.pdf))
 distils the craft: Part I the eight habits these scripts embody, Part II
-the illustrated catalog of all 100, Part III sixteen named failure
+the illustrated catalog of all 120, Part III sixteen named failure
 patterns (each harvested from a real bug), Part IV working checklists.
 
 ## Quick start
@@ -27,7 +27,7 @@ git clone https://github.com/ktwyw/publication-figures.git
 cd publication-figures
 pip install -r requirements.txt
 python figures/fig001_curve_fit.py      # any script runs standalone
-make figures                            # or render all 100
+make figures                            # or render all 120
 make guide gallery                      # rebuild the PDF guide + gallery
 ```
 
@@ -41,7 +41,8 @@ journal theory figure (61) - **D** transport phenomena & reactors
 (62-67) - **E** chem-eng & materials classics (68-73) -
 **F** electrochemistry, stability & selection (74-79) - **G** Ashby
 charts on the shared module (80-81) - **H** across science &
-engineering (82-100).
+engineering (82-100) - **I** manuscript panels at exact printed size
+(101-120).
 
 ## Gallery
 
@@ -68,13 +69,33 @@ Click any thumbnail to open its script.
 <tr><td align="center"><a href="figures/fig086_streeter_phelps.py"><img src="gallery/thumbs/fig086_streeter_phelps.png" width="150" alt="fig086_streeter_phelps"></a></td><td align="center"><a href="figures/fig087_antenna_patterns.py"><img src="gallery/thumbs/fig087_antenna_patterns.png" width="150" alt="fig087_antenna_patterns"></a></td><td align="center"><a href="figures/fig088_roofline_amdahl.py"><img src="gallery/thumbs/fig088_roofline_amdahl.png" width="150" alt="fig088_roofline_amdahl"></a></td><td align="center"><a href="figures/fig089_arps_decline.py"><img src="gallery/thumbs/fig089_arps_decline.png" width="150" alt="fig089_arps_decline"></a></td><td align="center"><a href="figures/fig090_influence_lines.py"><img src="gallery/thumbs/fig090_influence_lines.png" width="150" alt="fig090_influence_lines"></a></td></tr>
 <tr><td align="center"><a href="figures/fig091_response_spectrum.py"><img src="gallery/thumbs/fig091_response_spectrum.png" width="150" alt="fig091_response_spectrum"></a></td><td align="center"><a href="figures/fig092_activated_sludge.py"><img src="gallery/thumbs/fig092_activated_sludge.png" width="150" alt="fig092_activated_sludge"></a></td><td align="center"><a href="figures/fig093_planck_blackbody.py"><img src="gallery/thumbs/fig093_planck_blackbody.png" width="150" alt="fig093_planck_blackbody"></a></td><td align="center"><a href="figures/fig094_qho_wavefunctions.py"><img src="gallery/thumbs/fig094_qho_wavefunctions.png" width="150" alt="fig094_qho_wavefunctions"></a></td><td align="center"><a href="figures/fig095_titration_curves.py"><img src="gallery/thumbs/fig095_titration_curves.png" width="150" alt="fig095_titration_curves"></a></td></tr>
 <tr><td align="center"><a href="figures/fig096_eye_diagram.py"><img src="gallery/thumbs/fig096_eye_diagram.png" width="150" alt="fig096_eye_diagram"></a></td><td align="center"><a href="figures/fig097_pz_material_balance.py"><img src="gallery/thumbs/fig097_pz_material_balance.png" width="150" alt="fig097_pz_material_balance"></a></td><td align="center"><a href="figures/fig098_terzaghi_consolidation.py"><img src="gallery/thumbs/fig098_terzaghi_consolidation.png" width="150" alt="fig098_terzaghi_consolidation"></a></td><td align="center"><a href="figures/fig099_double_slit.py"><img src="gallery/thumbs/fig099_double_slit.png" width="150" alt="fig099_double_slit"></a></td><td align="center"><a href="figures/fig100_carnot_cycle.py"><img src="gallery/thumbs/fig100_carnot_cycle.png" width="150" alt="fig100_carnot_cycle"></a></td></tr>
+<tr><td align="center"><a href="figures/fig101_grouped_bars_planned.py"><img src="gallery/thumbs/fig101_grouped_bars_planned.png" width="150" alt="fig101_grouped_bars_planned"></a></td><td align="center"><a href="figures/fig102_tumour_growth_arms.py"><img src="gallery/thumbs/fig102_tumour_growth_arms.png" width="150" alt="fig102_tumour_growth_arms"></a></td><td align="center"><a href="figures/fig103_volcano_bh.py"><img src="gallery/thumbs/fig103_volcano_bh.png" width="150" alt="fig103_volcano_bh"></a></td><td align="center"><a href="figures/fig104_clustermap_annotated.py"><img src="gallery/thumbs/fig104_clustermap_annotated.png" width="150" alt="fig104_clustermap_annotated"></a></td><td align="center"><a href="figures/fig105_raincloud_kruskal.py"><img src="gallery/thumbs/fig105_raincloud_kruskal.png" width="150" alt="fig105_raincloud_kruskal"></a></td></tr>
+<tr><td align="center"><a href="figures/fig106_regression_marginals.py"><img src="gallery/thumbs/fig106_regression_marginals.png" width="150" alt="fig106_regression_marginals"></a></td><td align="center"><a href="figures/fig107_km_confidence_bands.py"><img src="gallery/thumbs/fig107_km_confidence_bands.png" width="150" alt="fig107_km_confidence_bands"></a></td><td align="center"><a href="figures/fig108_subgroup_forest.py"><img src="gallery/thumbs/fig108_subgroup_forest.png" width="150" alt="fig108_subgroup_forest"></a></td><td align="center"><a href="figures/fig109_roc_pr_bootstrap.py"><img src="gallery/thumbs/fig109_roc_pr_bootstrap.png" width="150" alt="fig109_roc_pr_bootstrap"></a></td><td align="center"><a href="figures/fig110_dose_response_ci.py"><img src="gallery/thumbs/fig110_dose_response_ci.png" width="150" alt="fig110_dose_response_ci"></a></td></tr>
+<tr><td align="center"><a href="figures/fig111_embedding_dotplot.py"><img src="gallery/thumbs/fig111_embedding_dotplot.png" width="150" alt="fig111_embedding_dotplot"></a></td><td align="center"><a href="figures/fig112_composition_diversity.py"><img src="gallery/thumbs/fig112_composition_diversity.png" width="150" alt="fig112_composition_diversity"></a></td><td align="center"><a href="figures/fig113_response_surface_fit.py"><img src="gallery/thumbs/fig113_response_surface_fit.png" width="150" alt="fig113_response_surface_fit"></a></td><td align="center"><a href="figures/fig114_manhattan_loci.py"><img src="gallery/thumbs/fig114_manhattan_loci.png" width="150" alt="fig114_manhattan_loci"></a></td><td align="center"><a href="figures/fig115_paired_estimation.py"><img src="gallery/thumbs/fig115_paired_estimation.png" width="150" alt="fig115_paired_estimation"></a></td></tr>
+<tr><td align="center"><a href="figures/fig116_model_benchmark.py"><img src="gallery/thumbs/fig116_model_benchmark.png" width="150" alt="fig116_model_benchmark"></a></td><td align="center"><a href="figures/fig117_xrd_annealing.py"><img src="gallery/thumbs/fig117_xrd_annealing.png" width="150" alt="fig117_xrd_annealing"></a></td><td align="center"><a href="figures/fig118_raster_psth_sem.py"><img src="gallery/thumbs/fig118_raster_psth_sem.png" width="150" alt="fig118_raster_psth_sem"></a></td><td align="center"><a href="figures/fig119_image_plate_quant.py"><img src="gallery/thumbs/fig119_image_plate_quant.png" width="150" alt="fig119_image_plate_quant"></a></td><td align="center"><a href="figures/fig120_hero_composite.py"><img src="gallery/thumbs/fig120_hero_composite.png" width="150" alt="fig120_hero_composite"></a></td></tr>
 </table>
+
+## Figures 101-120: manuscript panels at exact size
+
+The first hundred let `constrained_layout` and a tight bounding box
+choose the final size. The twenty in section **I** do what a journal
+asks instead, through the shared module
+[`figures/manuscript.py`](figures/manuscript.py): the canvas is set in
+millimetres (89, 120 or 183 mm wide) and saved without a crop, margins
+and gutters are in millimetres, type is 7/6 pt with a 5 pt floor, panel
+letters sit at a fixed point offset, and multi-panel scripts assert
+that their plot areas line up within 1.5 pt. Most revisit a figure type
+from sections A-B and add what a reviewer asks for next -- confidence
+bands and a cross-checked log-rank test on the Kaplan-Meier curves,
+bootstrap intervals and a precision-recall panel beside the ROC curves,
+Holm-adjusted exact P values on the bar chart. Each carries its own
+built-in check, and all of their data are simulated.
 
 ## Growing the library
 
-The set is built to expand past 100 -- see
+The set is built to keep growing -- see
 [`docs/ADDING_FIGURES.md`](docs/ADDING_FIGURES.md).
-`python tools/new_figure.py 101 my_slug "description"` scaffolds a new
+`python tools/new_figure.py 121 my_slug "description"` scaffolds a new
 figure on the house contract (style sheet, seeded RNG, derived curves,
 built-in self-check, twin outputs); one index line in
 `figures/README.md` flows it into the guide and this gallery
@@ -82,8 +103,8 @@ automatically, and CI re-verifies everything on push.
 
 ## Verification
 
-Every push renders all 100 figures on GitHub Actions; the scripts'
-built-in physics asserts are the test suite. The guide PDF is rebuilt
+Every push renders every figure on GitHub Actions; the scripts'
+built-in asserts are the test suite. The guide PDF is rebuilt
 and uploaded as an artifact.
 
 ## Licences & citation
